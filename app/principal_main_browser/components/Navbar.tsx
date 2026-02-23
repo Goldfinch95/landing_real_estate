@@ -24,6 +24,8 @@ const navLinks = [
   },
 ];
 
+
+
 export function Navbar() {
   const {
     isMobileMenuOpen,
@@ -68,7 +70,7 @@ export function Navbar() {
             <div className="leading-none">
               <div
                 className={cn(
-                  "font-serif text-2xl md:text-3xl tracking-widest font-light transition-colors duration-300",
+                  "font-serif text-2xl md:text-3xl tracking-widest  transition-colors duration-300",
                   isLight ? "text-verity-dark" : "text-white"
                 )}
               >
@@ -104,16 +106,16 @@ export function Navbar() {
                   )}
                 />
 
-                <span
-                  className={cn(
-                    "flex items-center gap-1 font-semibold text-xs tracking-widest transition-colors duration-300 uppercase cursor-default select-none",
-                    isLight
-                      ? "text-verity-dark/70 hover:text-verity-dark"
-                      : "text-white/90 hover:text-white"
-                  )}
-                >
-                  {link.label}
-                  {link.hasDropdown && (
+                {link.hasDropdown ? (
+                  <span
+                    className={cn(
+                      "flex items-center gap-1 font-semibold text-base  tracking-widest transition-colors duration-300 uppercase cursor-default select-none",
+                      isLight
+                        ? "text-verity-dark/70 hover:text-verity-dark"
+                        : "text-white/90 hover:text-white"
+                    )}
+                  >
+                    {link.label}
                     <ChevronDown
                       size={12}
                       className={cn(
@@ -121,8 +123,20 @@ export function Navbar() {
                         activeDropdown === link.label && "rotate-180"
                       )}
                     />
-                  )}
-                </span>
+                  </span>
+                ) : (
+                  <a
+                    href={link.href}
+                    className={cn(
+                      "flex items-center gap-1  font-semibold text-base tracking-widest transition-colors duration-300 uppercase",
+                      isLight
+                        ? "text-verity-dark/70 hover:text-verity-dark"
+                        : "text-white/90 hover:text-white"
+                    )}
+                  >
+                    {link.label}
+                  </a>
+                )}
               </div>
             ))}
           </nav>
@@ -132,7 +146,7 @@ export function Navbar() {
             <a
               href="#"
               className={cn(
-                "hidden lg:block font-semibold text-xs font-medium tracking-widest transition-colors duration-300 uppercase",
+                "hidden lg:block font-semibold text-base tracking-widest transition-colors duration-300 uppercase",
                 isLight
                   ? "text-verity-dark/70 hover:text-verity-dark"
                   : "text-white/90 hover:text-white"
@@ -142,6 +156,8 @@ export function Navbar() {
             >
               PUBLICAR
             </a>
+
+            
 
             {/* Hamburger */}
             <button
@@ -184,7 +200,7 @@ export function Navbar() {
               <a
                 key={child.label}
                 href={child.href}
-                className="relative group/child font-semibold text-xs tracking-widest text-verity-dark/60 hover:text-verity-dark transition-colors uppercase py-3"
+                className="relative group/child font-sans text-xs tracking-widest text-verity-dark/60 hover:text-verity-dark transition-colors uppercase py-3"
               >
                 <span className="absolute top-0 left-0 h-[2px] w-0 bg-[#bead8b] transition-all duration-700 ease-in-out group-hover/child:w-full" />
                 {child.label}
