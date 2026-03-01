@@ -8,15 +8,15 @@ interface HeroSectionProps {
 
 export function HeroSection({ videoSrc, fallbackImage }: HeroSectionProps) {
   return (
-    <section className="relative h-screen min-h-[600px] flex flex-col items-center justify-end pb-24">
+    <section className="relative h-screen min-h-[600px] flex flex-col items-center justify-end pb-16 sm:pb-24">
       {/* Background video */}
       <VideoBackground src={videoSrc} fallbackImage={fallbackImage} />
 
       {/* Hero content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-4xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 w-full max-w-4xl mx-auto">
         {/* Tagline */}
         <p
-          className="font-sans text-xs tracking-[0.3em] text-white/80 uppercase mb-4"
+          className="font-sans text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] text-white/80 uppercase mb-3 sm:mb-4"
           style={{ animation: "fade-up 0.8s ease 0.3s forwards", opacity: 0 }}
         >
           Tu futuro comienza aquí.
@@ -24,13 +24,13 @@ export function HeroSection({ videoSrc, fallbackImage }: HeroSectionProps) {
 
         {/* Headline */}
         <h1
-          className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-10 font-light"
+          className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8 sm:mb-10 font-light"
           style={{ animation: "fade-up 0.8s ease 0.5s forwards", opacity: 0 }}
         >
           Compra y alquila casas con confianza, encuentra tu{" "}
           <span className="relative inline-block italic">
             hogar
-            {/* Decorative underline circle */}
+            {/* Decorative underline */}
             <svg
               viewBox="0 0 120 30"
               className="absolute -bottom-3 left-0 w-full"

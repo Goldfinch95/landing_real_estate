@@ -40,7 +40,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       {/* Drawer */}
       <div
         className={cn(
-          "fixed top-0 right-0 z-50 h-full w-[420px] bg-[#F5F0E8] flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          "fixed top-0 right-0 z-50 h-full w-full sm:w-105 bg-[#F5F0E8] flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
