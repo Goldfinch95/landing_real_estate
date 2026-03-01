@@ -16,17 +16,18 @@ export function SectionHeader({ label, cta }: SectionHeaderProps) {
     <div
       ref={ref}
       className={cn(
-        "flex items-center justify-between border-b border-verity-dark/10 pb-4 transition-all duration-700",
+        "flex items-center justify-between border-b border-verity-dark/10 pb-4 transition-all duration-700 gap-4",
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       )}
     >
-      <p className="font-sans text-base tracking-widest text-verity-dark/50 uppercase">
+      <p className="font-sans text-sm md:text-base tracking-widest text-verity-dark/50 uppercase">
         {label}
       </p>
+
       {cta && (
         <a
           href="#"
-          className="flex items-center gap-2 font-sans text-base tracking-widest text-verity-dark/50 hover:text-verity-dark uppercase transition-colors group"
+          className="flex items-center gap-2 font-sans text-sm md:text-base tracking-widest text-verity-dark/50 hover:text-verity-dark uppercase transition-colors group flex-shrink-0"
         >
           {cta}
           <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
