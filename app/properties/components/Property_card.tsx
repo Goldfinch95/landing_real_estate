@@ -56,10 +56,10 @@ export function PropertyCard({ property, index }: PropertyCardProps) {
             <p className="font-sans text-base tracking-widest text-verity-dark/50 uppercase">
               {property.name}
             </p>
-            <p className="font-sans text-xs tracking-widest uppercase" style={{ color: "#bead8b" }}>
+            <p className="font-sans text-xs tracking-widest uppercase" style={{ color: "#a7833a" }}>
               No. {property.number}
             </p>
-            <p className="font-sans text-xs tracking-widest uppercase" style={{ color: "#bead8b" }}>
+            <p className="font-sans text-xs tracking-widest uppercase" style={{ color: "#a7833a" }}>
               {property.development}, {property.location}
             </p>
           </div>
